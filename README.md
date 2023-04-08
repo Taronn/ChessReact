@@ -1,6 +1,6 @@
 # ChessReact
 
-This repository contains the client-side code for a chess game built using the React JavaScript library. The game follows standard chess rules and allows two players to compete against each other in real time. The game logic is handled by the [Chess.js](https://github.com/jhlywa/chess.js) library, which provides a simple API for working with chess games. The user interface is built using the [chessboard2](https://github.com/oakmac/chessboard2) library, which provides a customizable and interactive chessboard component for displaying the game. The client code is designed to work seamlessly with the [ChessAspNetCore](https://github.com/Taronn/ChessAspNet) server-side code, which facilitates real-time communication between players using SignalR.
+This repository contains the client-side code for a chess game built using the React JavaScript library. The game follows standard chess rules and allows two players to compete against each other in real time. The game logic is handled by the [Chess.js](https://github.com/jhlywa/chess.js) library, which provides a simple API for working with chess games. The user interface is built using the [chessboard2](https://github.com/oakmac/chessboard2) library, which provides a customizable and interactive chessboard component for displaying the game. The client code is designed to work seamlessly with the [ChessAspNet](https://github.com/Taronn/ChessAspNet) server-side code, which facilitates real-time communication between players using SignalR.
 
 ## Available Scripts
 
