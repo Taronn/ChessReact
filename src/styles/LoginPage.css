@@ -1,0 +1,13 @@
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.login-form {
+  padding: 20px;
+  background-color: azure;
+  min-width: 30%;
+  max-width: 90%;
+}
