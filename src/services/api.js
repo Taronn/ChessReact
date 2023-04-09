@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://taronn-001-site1.etempurl.com/',
+  baseURL: 'https://chesstaron.azurewebsites.net/',
   withCredentials: true,
 });
 

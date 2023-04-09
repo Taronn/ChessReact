@@ -8,7 +8,7 @@ const SignalRProvider = ({ children }) => {
 
   useEffect(() => {
     const newConnection = new HubConnectionBuilder()
-      .withUrl('http://taronn-001-site1.etempurl.com/hubs/chess')
+      .withUrl('https://chesstaron.azurewebsites.net/hubs/chess')
       .withAutomaticReconnect()
       .build();
 
