@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://localhost:7084/',
+  baseURL: 'http://taronn-001-site1.etempurl.com/',
   withCredentials: true,
 });
 
