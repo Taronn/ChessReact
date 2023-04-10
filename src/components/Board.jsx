@@ -49,9 +49,13 @@ function Board({ opponent, pgn, oppConnStatus }) {
     const config = {
       position: chess.game.fen(),
       orientation: user.color,
-      showCoordinates: true,
       touchMove: true,
-      moveSpeed: 1000,
+      appearSpeed: 'slow',
+      moveSpeed: 'slow',
+      snapbackSpeed: 'slow',
+      snapSpeed: 'slow',
+      trashSpeed: 'slow',
+      onMousedownSquare,
       onTouchSquare,
     };
     if (pgn) {
@@ -122,7 +126,11 @@ function Board({ opponent, pgn, oppConnStatus }) {
     };
   }, [connection]);
 
-  function onTouchSquare(square, piece, boardInfo) {
+  const onTouchSquare = (square, piece, boardInfo) =>
+    onMousedownSquare({ square, piece });
+
+  function onMousedownSquare({ square, piece }) {
+    console.log('touch');
     board.clearCircles();
 
     // do not pick up pieces if the game is over
@@ -174,7 +182,7 @@ function Board({ opponent, pgn, oppConnStatus }) {
   }
 
   return (
-    <div className="game mt-3">
+    <div className="game mt-3 shadow-lg">
       <PlayerInfo player={opponent} chess={chess} connStatus={oppConnStatus} />
       <div id="chessboard"></div>
       <PlayerInfo
