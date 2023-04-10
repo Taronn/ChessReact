@@ -12,11 +12,15 @@ function AboutPage() {
           <p>
             If you have any questions or feedback, please don't hesitate to
             contact us using the links below or email us at{' '}
-            <a href="mailto:info@chess.com">taronngabrielyan@gmail.com</a>.
+            <a href="mailto:taronngabrielyan@gmail.com">
+              taronngabrielyan@gmail.com
+            </a>
+            .
           </p>
           <Row className="justify-content-center flex-wrap mt-4">
-            <Col xs="auto" className="px-2 mb-3 mb-md-0 text-center">
+            <Col xs="auto" className="p-0">
               <Button
+                className="mx-2 mb-3 text-center"
                 variant="outline-primary"
                 href="https://github.com/Taronn"
                 target="_blank"
@@ -25,11 +29,10 @@ function AboutPage() {
                 <Github size={20} className="me-2" />
                 GitHub
               </Button>
-            </Col>
-            <Col xs="auto" className="px-2 mb-3 mb-md-0 text-center">
               <Button
+                className="mx-2 mb-3 text-center"
                 variant="outline-primary"
-                href="https://www.linkedin.com/in/taron-gabrielyan-621526254/"
+                href="https://www.linkedin.com/in/taronn/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -37,8 +40,10 @@ function AboutPage() {
                 LinkedIn
               </Button>
             </Col>
-            <Col xs="auto" className="px-2 mb-3 mb-md-0 text-center">
+
+            <Col xs="auto" className="p-0">
               <Button
+                className="mx-2 mb-3 text-center"
                 variant="outline-primary"
                 href="https://www.facebook.com/"
                 target="_blank"
@@ -47,11 +52,10 @@ function AboutPage() {
                 <Facebook size={20} className="me-2" />
                 Facebook
               </Button>
-            </Col>
-            <Col xs="auto" className="px-2 mb-3 mb-md-0 text-center">
               <Button
+                className="mx-2 mb-3 text-center"
                 variant="outline-primary"
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/taronn0"
                 target="_blank"
                 rel="noopener noreferrer"
               >
