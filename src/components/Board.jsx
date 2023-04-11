@@ -19,6 +19,7 @@ function Board({ opponent, pgn, oppConnStatus }) {
   const navigate = useNavigate();
   const [showDrawOffer, setShowDrawOffer] = useState(false);
   const [chess, setChess] = useState({ game: new Chess() });
+  const [moveSound, setMoveSound] = useState();
 
   let board;
   let pendingMove = null;
@@ -127,6 +128,10 @@ function Board({ opponent, pgn, oppConnStatus }) {
     };
   }, [connection]);
 
+  useEffect(() => {
+    moveSound.play();
+  }, [moveSound]);
+
   function playMoveSound(move) {
     let path = 'assets/audio/';
     if (move.flags.includes('k') || move.flags.includes('q')) {
@@ -136,8 +141,7 @@ function Board({ opponent, pgn, oppConnStatus }) {
     } else {
       path += 'move-self.mp3';
     }
-    const audio = new Audio(path);
-    audio.play();
+    setMoveSound(new Audio(path));
   }
 
   const onTouchSquare = (square, piece, boardInfo) =>
