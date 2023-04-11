@@ -77,7 +77,6 @@ function Board({ opponent, pgn, oppConnStatus }) {
         size: 'small',
       });
       const move = chess.game.move({ from: from, to: to, promotion: 'q' });
-      playMoveSound(move);
       board.position(chess.game.fen());
       setChess({ ...chess });
     });
