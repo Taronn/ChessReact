@@ -76,7 +76,8 @@ function Board({ opponent, pgn, oppConnStatus }) {
         opacity: 50,
         size: 'small',
       });
-      chess.game.move({ from: from, to: to });
+      const move = chess.game.move({ from: from, to: to, promotion: 'q' });
+      playMoveSound(move);
       board.position(chess.game.fen());
       setChess({ ...chess });
     });
@@ -126,11 +127,23 @@ function Board({ opponent, pgn, oppConnStatus }) {
     };
   }, [connection]);
 
+  function playMoveSound(move) {
+    let path = '/assets/audio/';
+    if (move.flags.incudes('k') || move.flags.includes('q')) {
+      path += 'castle.mp3';
+    } else if (move.hasOwnProperty('captured')) {
+      path += 'capture.mp3';
+    } else {
+      path += 'move-self.mp3';
+    }
+    const audio = new Audio(path);
+    audio.play();
+  }
+
   const onTouchSquare = (square, piece, boardInfo) =>
     onMousedownSquare({ square, piece });
 
   function onMousedownSquare({ square, piece }) {
-    console.log('touch');
     board.clearCircles();
 
     // do not pick up pieces if the game is over
@@ -169,6 +182,7 @@ function Board({ opponent, pgn, oppConnStatus }) {
       pendingMove = null;
 
       if (move) {
+        playMoveSound(move);
         connection.invoke('MakeMove', move.from, move.to);
         setChess({ ...chess });
         board.clearArrows();
