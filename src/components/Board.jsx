@@ -128,7 +128,7 @@ function Board({ opponent, pgn, oppConnStatus }) {
   }, [connection]);
 
   function playMoveSound(move) {
-    let path = '/assets/audio/';
+    let path = 'assets/audio/';
     if (move.flags.includes('k') || move.flags.includes('q')) {
       path += 'castle.mp3';
     } else if (move.hasOwnProperty('captured')) {
