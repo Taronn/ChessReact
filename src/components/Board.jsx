@@ -19,7 +19,7 @@ function Board({ opponent, pgn, oppConnStatus }) {
   const navigate = useNavigate();
   const [showDrawOffer, setShowDrawOffer] = useState(false);
   const [chess, setChess] = useState({ game: new Chess() });
-  const [moveSound, setMoveSound] = useState();
+  const [moveSound, setMoveSound] = useState(null);
 
   let board;
   let pendingMove = null;
@@ -129,7 +129,7 @@ function Board({ opponent, pgn, oppConnStatus }) {
   }, [connection]);
 
   useEffect(() => {
-    moveSound.play();
+    moveSound?.play();
   }, [moveSound]);
 
   function playMoveSound(move) {
